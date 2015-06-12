@@ -31,7 +31,7 @@ $(function() {
             + " AND within_circle(location, "
             + pos.coords.latitude + ", "
             + pos.coords.longitude + ", 500)",
-          "$q": "hot dogs",
+          "$q": search,
           "$select": "*, distance_in_meters(location, 'POINT(" + pos.coords.longitude + " " + pos.coords.latitude + ")') AS range",
           "$order" : "range",
           "$limit" : 5,
