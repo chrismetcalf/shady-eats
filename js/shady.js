@@ -27,7 +27,10 @@ $(function() {
         type: "GET",
         data: {
           "status" : "APPROVED",
-          "$where": "expirationdate > '2015-06-12T19:08:22.939' AND within_circle(location, 37.78327262068713, -122.40279181790771, 500)",
+          "$where": "expirationdate > '" + (new Date()).toISOString().replace(/Z/, '') + "'" 
+            + " AND within_circle(location, "
+            + pos.coords.latitude + ", "
+            + pos.coords.longitude + ", 500)",
           "$q": "hot dogs",
           "$select": "*, distance_in_meters(location, 'POINT(" + pos.coords.longitude + " " + pos.coords.latitude + ")') AS range",
           "$order" : "range",
