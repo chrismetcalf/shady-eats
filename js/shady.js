@@ -31,7 +31,8 @@ $(function() {
           "$q": "hot dogs",
           "$select": "*, distance_in_meters(location, 'POINT(" + pos.coords.longitude + " " + pos.coords.latitude + ")') AS range",
           "$order" : "range",
-          "$limit" : 5
+          "$limit" : 5,
+          "$$app_token": "CGxaHQoQlgQSev4zyUh5aR5J3"
         }
       }).done(function(trucks) {
         $.each(trucks, function(idx, truck) {
@@ -41,6 +42,7 @@ $(function() {
             type: "GET",
             data: {
               "$select": "min(distance_in_meters(location, 'POINT(" + truck.location.coordinates.join(" ") + ")')) as distance",
+              "$$app_token": "CGxaHQoQlgQSev4zyUh5aR5J3"
             },
           }).done(function(closest_tree) {
             // Add a marker for the location of the food truck
