@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Shady Eats!</title>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+      #map {
+        width: 800px;
+        height: 600px;
+        background-color: #CCC;
+      }
+
+      .info-window {
+        max-width: 200px;
+      }
+
+      #search {
+        width: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shady Eats!</h1>
+
+      <p>Do you like to eat awesome street food? But, like me, do you hate roasting in the sun while you do it? <em>Shady Eats</em> will help you find a food truck that serves the kind of food you're looking for and also has nearby trees to lounge under!</p>
+
+      <form id="search" class="input-group" method="POST">
+        <input name="q" type="text" class="query form-control" placeholder="What kind of food do you like?" />
+      </form>
+
+      <ul id="map"></ul>
+    </div>
+
+    <script src="./js/shady.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
